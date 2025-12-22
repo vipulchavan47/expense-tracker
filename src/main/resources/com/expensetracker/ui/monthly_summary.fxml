@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.expensetracker.ui.MonthlySummaryController">
+
+    <Label text="Monthly Summary"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <ComboBox fx:id="monthComboBox" promptText="Select Month"/>
+    <TextField fx:id="yearField" promptText="Year (e.g. 2025)"/>
+
+    <Button text="View Summary"
+            onAction="#onViewSummary"/>
+
+    <Label fx:id="resultLabel"
+           style="-fx-font-size: 14px;"/>
+</VBox>

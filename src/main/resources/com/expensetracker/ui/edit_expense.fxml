@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.expensetracker.ui.EditExpenseController">
+
+    <Label text="Edit Expense"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <ComboBox fx:id="categoryComboBox"
+              promptText="Select Category"/>
+
+    <TextField fx:id="amountField"
+               promptText="Amount"/>
+
+    <TextField fx:id="descriptionField"
+               promptText="Description"/>
+
+    <Button text="Update Expense"
+            onAction="#onUpdateExpense"/>
+</VBox>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.expensetracker.ui.ViewExpensesController">
+
+    <Label text="My Expenses"
+           style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <TableView fx:id="expenseTable" prefWidth="450">
+
+        <columns>
+            <TableColumn fx:id="dateCol" text="Date" />
+            <TableColumn fx:id="categoryCol" text="Category" />
+            <TableColumn fx:id="amountCol" text="Amount" />
+            <TableColumn fx:id="descCol" text="Description" />
+            <TableColumn fx:id="actionCol" text="Actions" prefWidth="150"/>
+        </columns>
+
+    </TableView>
+</VBox>
