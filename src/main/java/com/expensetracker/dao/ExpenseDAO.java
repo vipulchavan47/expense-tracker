@@ -68,7 +68,7 @@ public class ExpenseDAO {
             e.setAmount(rs.getDouble("amount"));
             e.setDescription(rs.getString("description"));
             e.setExpenseDate(rs.getDate("expense_date").toLocalDate());
-            e.setCategoryName(rs.getString("category_name")); // 🔥 key line
+            e.setCategoryName(rs.getString("category_name"));
 
 
             expenses.add(e);
@@ -244,6 +244,51 @@ public class ExpenseDAO {
 
         con.close();
         return result;
+    }
+
+// for csv generation
+    public List<Expense> getExpensesByMonth(int userId, int month, int year)
+            throws Exception {
+
+        List<Expense> expenses = new ArrayList<>();
+
+        String sql = """
+        SELECT e.expense_id,
+               e.amount,
+               e.description,
+               e.expense_date,
+               c.category_name
+        FROM expenses e
+        JOIN categories c ON e.category_id = c.category_id
+        WHERE e.user_id = ?
+          AND MONTH(e.expense_date) = ?
+          AND YEAR(e.expense_date) = ?
+        ORDER BY e.expense_date
+    """;
+
+        Connection con = DBConnection.getConnection();
+        PreparedStatement ps = con.prepareStatement(sql);
+
+        ps.setInt(1, userId);
+        ps.setInt(2, month);
+        ps.setInt(3, year);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+
+            Expense e = new Expense();
+            e.setExpenseId(rs.getInt("expense_id"));
+            e.setAmount(rs.getDouble("amount"));
+            e.setDescription(rs.getString("description"));
+            e.setExpenseDate(rs.getDate("expense_date").toLocalDate());
+            e.setCategoryName(rs.getString("category_name"));
+
+            expenses.add(e);
+        }
+
+        con.close();
+        return expenses;
     }
 
 

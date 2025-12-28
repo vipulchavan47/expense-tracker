@@ -17,6 +17,14 @@
     <Button text="View Summary"
             onAction="#onViewSummary"/>
 
+    <Button
+            text="Export CSV"
+            fx:id="exportCsvBtn"
+            onAction="#exportMonthlyCsv"
+            prefWidth="160"
+    />
+
+
     <Label fx:id="resultLabel"
            style="-fx-font-size: 14px;"/>
 </VBox>

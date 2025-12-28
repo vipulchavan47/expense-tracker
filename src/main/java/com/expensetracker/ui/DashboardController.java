@@ -24,7 +24,7 @@ public class DashboardController {
             stage.setTitle("Add Expense");
             stage.setScene(new Scene(loader.load(), 300, 280));
 
-            // 👇 refresh dashboard after window closes
+            //  refresh dashboard after window closes
             stage.setOnHidden(e -> refreshDashboard());
 
             stage.show();

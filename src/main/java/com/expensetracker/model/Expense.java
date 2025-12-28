@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Expense {
 
-    private int expenseId;   // 🔥 REQUIRED
+    private int expenseId;
     private int userId;
     private int categoryId;
     private double amount;
@@ -12,8 +12,7 @@ public class Expense {
     private LocalDate expenseDate;
     private String categoryName;
 
-
-    // ===== setters =====
+    // setters
     public void setExpenseId(int expenseId) {
         this.expenseId = expenseId;
     }
