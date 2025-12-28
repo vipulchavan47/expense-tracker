@@ -7,6 +7,7 @@ A Java-based Expense Tracker application to record, categorize, and manage daily
 - Categorize expenses
 - View expense summaries
 - Data stored in MySQL
+- Export data
 
 ## Tech Stack
 - Java
@@ -22,6 +23,30 @@ A Java-based Expense Tracker application to record, categorize, and manage daily
 4. Run the project
 
 ## How to Run
-```bash
+``` bash
 mvn clean install
 mvn exec:java
+```
+
+## Screenshots
+
+### Login & Registration
+![Login & Register](screenshots/login-register.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Add Expense
+![Add Expense](screenshots/add-expense.png)
+
+### View Expenses
+![View Expenses](screenshots/view-expense.png)
+
+### Add Category
+![Add Category](screenshots/add-category.png)
+
+### Monthly Summary & Export
+![Monthly Summary](screenshots/montly-view-export.png)
+
+### Expense Analytics
+![Charts](screenshots/chart.png)
